@@ -85,22 +85,6 @@ io.on("connection", async (socket) => {
   });
 });
 
-app.use(express.static(path.join(__dirname, 'src')));
 
-app.post("/data",async(req,res)=>{
-   try{
-    const body = req.body
-    console.log(body)
-    const data = TimeSeriesModel.find({})
-    console.log(data)
-    res.json(data)
-   }catch(e){
-    res.json(e)
-   }
-})
-
-http.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
 
   
